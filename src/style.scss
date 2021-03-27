@@ -1,0 +1,96 @@
+$gray-1: #333333;
+$gray-2: #4F4F4F;
+$gray-3: #828282;
+$gray-5: #E0E0E0;
+$gray-6: #F2F2F2;
+$color-error: #D32F2F;
+$color-focus: #2962FF;
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin-left: 80px;
+}
+
+.title {
+  color: $gray-2;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  margin-top: 30px;
+  margin-bottom: 65px;
+  width: 200px;
+}
+
+.input {
+  input {
+    border: 1px solid $gray-3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 4px;
+    ::placeholder {
+      color: $gray-3;
+    }
+    padding: 12px 18px;
+  }
+
+  .label {
+    color: $gray-1;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+
+  .helper {
+    color: $gray-3;
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14.5px;
+    margin-top: 4px;
+  }
+
+  &:focus-within:not(.disabled) {
+    .label {
+      color: $color-focus;
+    }
+    input {
+      border-color: $color-focus;
+    }
+  }
+
+  &:hover:not(:focus-within):not(.disabled) {
+    .label {
+      color: $gray-1;
+    }
+    input {
+      border-color: $gray-1;
+    }
+  }
+
+  &.error, &.error:focus-within:not(.disabled) {
+    .label {
+      color: $color-error;
+    }
+    input {
+      border-color: $color-error;
+    }
+    .helper {
+      color: $color-error;
+    }
+  }
+
+  &.disabled {
+    input {
+      background-color: $gray-6;
+      border-color: $gray-5;
+    }
+  }
+}
