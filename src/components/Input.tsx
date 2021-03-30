@@ -5,18 +5,36 @@ type InputProps = {
   label?: string,
   placeholder?: string,
   helperText?: string,
+  startIcon?: string,
+  endIcon?: string,
+  value?: string,
+  size?: 'sm' | 'md',
+  fullWidth?: boolean,
+  multiline?: boolean,
+  row?: number | string,
   error?: boolean,
   disabled?: boolean,
   [key: string]: any,
 }
 
 export default function Input({
-  label = "Label", placeholder = "Placeholder", helperText, error, disabled, ...props
+  label = "Label", placeholder = "Placeholder",
+  helperText, startIcon, endIcon, value, size, fullWidth,
+  multiline, row, error, disabled, ...props
 }: InputProps) {
+  if (typeof row === 'string')
+    row = parseInt(row);
+
   const inputRef = useRef(null);
   const focusInput = () => inputRef?.current?.focus();
 
   const classes = ['input'];
+
+  if (size === 'sm')
+    classes.push('sm')
+
+  if (fullWidth)
+    classes.push('full-width')
 
   if (error)
     classes.push('error');
@@ -26,7 +44,10 @@ export default function Input({
   return <div className={cn(classes)} onClick={focusInput}>
     <label className="label">{label}</label>
     <div className="input-container">
-      <input ref={inputRef} placeholder={placeholder} disabled={disabled} {...props} />
+      {startIcon && <span className="material-icons start">{startIcon}</span>}
+      <input ref={inputRef} placeholder={placeholder}
+        disabled={disabled} value={value} {...props} />
+      {endIcon && <span className="material-icons end">{endIcon}</span>}
     </div>
     {helperText && <span className="helper">{helperText}</span>}
   </div>
