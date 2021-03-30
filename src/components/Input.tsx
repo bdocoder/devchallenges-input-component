@@ -1,17 +1,21 @@
 import cn from 'classnames';
+import { useRef } from 'react';
 
 type InputProps = {
-  id?: string,
   label?: string,
   placeholder?: string,
   helperText?: string,
   error?: boolean,
   disabled?: boolean,
+  [key: string]: any,
 }
 
 export default function Input({
-  id, label = "Label", placeholder = "Placeholder", helperText, error, disabled,
+  label = "Label", placeholder = "Placeholder", helperText, error, disabled, ...props
 }: InputProps) {
+  const inputRef = useRef(null);
+  const focusInput = () => inputRef?.current?.focus();
+
   const classes = ['input'];
 
   if (error)
@@ -19,9 +23,11 @@ export default function Input({
   if (disabled)
     classes.push('disabled');
 
-  return <div className={cn(classes)}>
-    <label htmlFor={id} className="label">{label}</label>
-    <input id={id} placeholder={placeholder} disabled={disabled} />
+  return <div className={cn(classes)} onClick={focusInput}>
+    <label className="label">{label}</label>
+    <div className="input-container">
+      <input ref={inputRef} placeholder={placeholder} disabled={disabled} {...props} />
+    </div>
     {helperText && <span className="helper">{helperText}</span>}
   </div>
 }
