@@ -41,7 +41,8 @@ $color-focus: #2962FF;
 
     padding: 18px;
     
-    input {
+    input, textarea {
+      resize: none;
       // TODO: remove
       // background-color: lightgray;
       color: $gray-1;
@@ -91,6 +92,10 @@ $color-focus: #2962FF;
     width: 100%;
   }
 
+  &.multiline .input-container {
+    height: auto;
+  }
+
   &:focus-within {
     .label {
       color: $color-focus;
@@ -99,28 +104,23 @@ $color-focus: #2962FF;
     .input-container {
       border-color: $color-focus;
     }
-    
+  }
 
-    &.error {
-      .input-container {
-        border-color: $color-error;
-      }
+  &.error, &.error:focus-within {
+    .input-container {
+      border-color: $color-error;
     }
   }
   
   &.error {
+    .label, .helper {
+      color: $color-error;
+    }
+  }
+
+  &:hover:not(:focus-within) {
     .label {
-      color: $color-error;
-    }
-
-    .helper {
-      color: $color-error;
-    }
-
-    &.error:hover:not(:focus-within) {
-      .label {
-        color: $gray-1;
-      }
+      color: $gray-1;
     }
   }
   
@@ -134,5 +134,4 @@ $color-focus: #2962FF;
     border-color: $gray-5;
     }
   }
-
 }

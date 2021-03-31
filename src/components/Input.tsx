@@ -30,6 +30,9 @@ export default function Input({
 
   const classes = ['input'];
 
+  if (multiline)
+    classes.push('multiline');
+
   if (size === 'sm')
     classes.push('sm')
 
@@ -45,8 +48,13 @@ export default function Input({
     <label className="label">{label}</label>
     <div className="input-container">
       {startIcon && <span className="material-icons start">{startIcon}</span>}
-      <input ref={inputRef} placeholder={placeholder}
-        disabled={disabled} value={value} {...props} />
+      {
+        multiline
+          ? <textarea ref={inputRef} placeholder={placeholder} rows={row}
+            disabled={disabled} value={value} {...props} />
+          : <input ref={inputRef} placeholder={placeholder}
+            disabled={disabled} value={value} {...props} />
+      }
       {endIcon && <span className="material-icons end">{endIcon}</span>}
     </div>
     {helperText && <span className="helper">{helperText}</span>}
