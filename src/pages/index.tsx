@@ -1,7 +1,7 @@
 import Input from "../components/Input";
 
 export default function Index() {
-  return <div>
+  return <>
     <div className="title">Inputs</div>
 
     <div className="section">
@@ -98,5 +98,5 @@ export default function Index() {
       href="https://devchallenges.io/portfolio/bdocoder">
       created by <strong>bdocoder</strong> - devChallenges.io
     </a>
-  </div>
+  </>
 }

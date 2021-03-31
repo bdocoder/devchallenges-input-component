@@ -50,9 +50,9 @@ export default function Input({
       {startIcon && <span className="material-icons start">{startIcon}</span>}
       {
         multiline
-          ? <textarea ref={inputRef} placeholder={placeholder} rows={row}
+          ? <textarea ref={inputRef} placeholder={placeholder} rows={row} readOnly={!!value}
             disabled={disabled} value={value} {...props} />
-          : <input ref={inputRef} placeholder={placeholder}
+          : <input ref={inputRef} placeholder={placeholder} readOnly={!!value}
             disabled={disabled} value={value} {...props} />
       }
       {endIcon && <span className="material-icons end">{endIcon}</span>}
