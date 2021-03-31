@@ -83,5 +83,5 @@ $ yarn dev
 
 ## Contact
 
-- GitHub [@bdocoder](https://{github.com/bdocoder})
-- Twitter [@bdocoder](https://{twitter.com/bdocoder})
+- GitHub [@bdocoder](https://github.com/bdocoder)
+- Twitter [@bdocoder](https://twitter.com/bdocoder)
