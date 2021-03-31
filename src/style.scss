@@ -1,6 +1,7 @@
 $gray-1: #333333;
 $gray-2: #4F4F4F;
 $gray-3: #828282;
+$gray-4: #9E9E9E;
 $gray-5: #E0E0E0;
 $gray-6: #F2F2F2;
 $color-error: #D32F2F;
@@ -144,7 +145,7 @@ body {
 }
 
 .title {
-  color: $gray-2;
+  color: $gray-2;;
   font-family: Poppins;
   font-weight: 500;
   font-size: 24px;
@@ -155,7 +156,7 @@ body {
 }
 
 .section {
-  margin-bottom: 42px;
+  margin-top: 42px;
 
   .section-title {
     font-family: "Ubuntu Mono", monospace;
@@ -171,5 +172,21 @@ body {
 
   .section {
     min-width: 356px;
+  }
+}
+
+#username {
+  color: $gray-4;
+  display: block;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 22px;
+  margin-top: 22px;
+  text-align: center;
+
+  strong {
+    font-weight: 700;
   }
 }
