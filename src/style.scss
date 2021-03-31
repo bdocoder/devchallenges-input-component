@@ -8,6 +8,8 @@ $color-focus: #2962FF;
 
 * {
   font-family: Noto Sans JP, sans-serif;
+  margin: 0;
+  padding: 0;
   &:focus {
     outline: none;
   }
@@ -133,5 +135,41 @@ $color-focus: #2962FF;
     background: $gray-6;
     border-color: $gray-5;
     }
+  }
+}
+
+body {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.title {
+  color: $gray-2;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+
+  margin-top: 30px;
+  margin-bottom: 65px;
+}
+
+.section {
+  margin-bottom: 42px;
+
+  .section-title {
+    font-family: "Ubuntu Mono", monospace;
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 12px;
+    color: $gray-1;
+  }
+}
+
+.multi-section {
+  display: flex;
+
+  .section {
+    min-width: 356px;
   }
 }
