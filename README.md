@@ -67,6 +67,9 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/bdocoder/devchallenges-input-component
 
+# change directory
+cd devchallenges-input-component
+
 # Install dependencies
 $ npm install
 # or
