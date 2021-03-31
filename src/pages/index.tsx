@@ -94,7 +94,8 @@ export default function Index() {
       <Input multiline row="4" />
     </div>
 
-    <a id="username" href="https://devchallenges.io/portfolio/bdocoder">
+    <a id="username" target='blank'
+      href="https://devchallenges.io/portfolio/bdocoder">
       created by <strong>bdocoder</strong> - devChallenges.io
     </a>
   </div>
