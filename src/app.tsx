@@ -4,7 +4,7 @@ import Input from "./Input";
 export default function Index() {
   return (
     <>
-      <div className="title">Inputs</div>
+      <h1 className="title">Inputs</h1>
 
       <div className="section">
         <div className="section-title">{"<Input />"}</div>
